@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,fancyhdr,enumerate,graphicx,array}
+\usepackage[usenames,dvipsnames]{color}
+
+\headheight=23pt
+\textwidth=6.5in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textheight=8in
+ \topmargin = -0.4 in
+
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[subsection]
+\newtheorem*{defn}{Definition}
+\newtheorem*{note}{Note}
+\newtheorem{exer}[ex]{Exercise}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{props}{Properties}
+
+\newcommand*{\dlim}{\displaystyle\lim}
+\renewcommand{\u}[1]{\underline{#1}}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+
+\newcommand{\lectureheader}{
+\thispagestyle{fancy}
+\lhead{Math 251: Calculus I\\ CRN 33502}
+\rhead{University of Oregon\\ Spring 2017}
+\chead{\textbf{Section \arabic{section}.\arabic{subsection}} \\ 
+\textbf{\sectiontitle}}
+\lfoot{} \cfoot{} \rfoot{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{2}			%%%%%%%%%%%%%
+\setcounter{subsection}{4}		%%%%%%%%%%%%%
+\def\sectiontitle{Continuity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\lectureheader
+
+\begin{defn}
+A function $f(x)$ is said to be \u{continuous} at a point $a$ if 
+$$\dlim_{x \to a} f(x) = f(a)$$
+Notice that this definition implicitly requires three things for $f$ to be continuous at $a$:
+ $f(a)$ and $\dlim_{x\to a}f(x)$ are both defined and are equal to each other.
+
+We say that $f$ is continuous on an interval if it is continuous at every point in the interval. If $f$ is not continuous at $a$, we say that $f$ is discontinuous or that $f$ has a discontinuity at $a$.
+%% For endpoints of the domain, we mean a one-sided limit
+%%``can draw without picking up your pencil''
+%% removable discontinuities, infinite discont (asymptote), jump discont
+\end{defn}
+
+\vspace{3in}
+
+\begin{note}
+Polynomials are continuous for all real numbers.
+Rational functions are continuous on their domain (but could have discontinuities outside of their domain). Other functions that are continuous at every numbers in their domains include: root, trigonometric, inverse trigonometric, exponential, and logarithmic functions.
+\end{note}
+
+\begin{ex}
+Is the function $$f(x)=\begin{cases} 4-x & \text{ if } x<1\\ \sqrt{x} & \text{ if } x\geq1\end{cases}$$ continuous on $(-\infty,\infty)$?
+\end{ex}
+
+\newpage
+
+\begin{ex}
+Find a value of $b$ such that $$g(x)=\begin{cases}
+2bx & \text{ if } x\leq -1\\\
+3x^2+x+b & \text{ if } x>-1\\ \end{cases} $$ is continuous for all real numbers.
+\end{ex}
+\vspace{2in}
+\begin{props}
+If $f$ is a continuous function and $\dlim_{x\to a}g(x)$ exists and is in the domain of $f$, then $$\dlim_{x\to a}f(g(x)) = f\left(\dlim_{x\to a}g(x)\right).$$
+\end{props}
+
+\begin{ex}
+Find the indicated limit: $\dlim_{x\to 1}\ln\left(\dfrac{x^2-1}{x-1}\right)$
+\end{ex}
+\vspace{1.5in}
+\begin{exer}
+Recall the function from the Section 2.2 Handout: $$f(x)=\left\{\begin{tabular}{ll}
+$\sin(x)$ & if $x<0$\\
+$3$ & if $x=0$\\
+$x^2$ & if $0<x\leq 1$\\
+$1-x$ & if $x>1$
+\end{tabular}
+\right.$$
+Sketch a graph of this function and use the graph to find all values $a$ for which $f$ is not continuous at $a$.
+\end{exer}
+
+
+\end{document}

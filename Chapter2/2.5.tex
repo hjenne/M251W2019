@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,fancyhdr,enumerate,graphicx,array}
+\usepackage[usenames,dvipsnames]{color}
+
+\headheight=23pt
+\textwidth=6.5in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textheight=8in
+ \topmargin = -0.4 in
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[subsection]
+\newtheorem*{defn}{Definition}
+\newtheorem*{note}{Note}
+\newtheorem{exer}[ex]{Exercise}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{props}{Properties}
+
+\newcommand*{\dlim}{\displaystyle\lim}
+\renewcommand{\u}[1]{\underline{#1}}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+
+\newcommand{\lectureheader}{
+\thispagestyle{fancy}
+\lhead{Math 251: Calculus I\\ CRN 33502}
+\rhead{University of Oregon\\ Spring 2017}
+\chead{\textbf{Section \arabic{section}.\arabic{subsection}} \\ 
+\textbf{\sectiontitle}}
+\lfoot{} \cfoot{} \rfoot{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{2}			%%%%%%%%%%%%%
+\setcounter{subsection}{5}		%%%%%%%%%%%%%
+\def\sectiontitle{Limits Involving Infinity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\lectureheader
+
+\begin{ex}
+Find $\dlim_{x\to0}\frac{1}{x^2}$ if it exists. 
+\end{ex}
+\vspace{1.5in}
+
+
+\begin{defn}
+The notation $\dlim_{x\to a}f(x)= \infty$ means the values of $f(x)$ can be made arbitrarily large by taking $x$ sufficiently close to $a$ (on either side of $a$) but not equal to $a$. Similarly, $\dlim_{x\to a}f(x)= -\infty$ means that the values of $f(x)$ can be made as large negative as we like for all values of $x$ sufficiently close to $a$, but not equal to $a$. This does not mean that the limit exists. It just expresses the particular way in which the limit does not exist. 
+\end{defn}
+
+
+\begin{ex}
+Let $$g(x)=\begin{cases}
+4-x^2 & \text{ if } x\leq2\\ \frac{1}{x-2} & \text{ if }x>2.
+\end{cases}$$
+Find $\dlim_{x\to2^-}g(x)$, $\dlim_{x\to2^+}g(x)$, and $\dlim_{x\to2}g(x)$, if they exist.
+\end{ex}
+\vspace{2in}
+\begin{defn}
+A function $f(x)$ has a \u{vertical asymptote} at $x=a$ if at least one of the following conditions is true: $\dlim_{x\to a^-}f(x)=\infty$, $\dlim_{x\to a^-}f(x)=-\infty$, $\dlim_{x\to a^+}f(x)=\infty$, or $\dlim_{x\to a^+}f(x)=-\infty$.
+\end{defn}
+\vspace{1cm}
+
+\begin{defn}
+The limit of $f(x)$ as $x$ approaches infinity is the value $L$ (if one exists) that $f(x)$ approaches when $x$ is taken to be as large as desired (in the positive direction), and we write $\dlim_{x\to\infty} f(x)=L$. Similarly, $\dlim_{x\to-\infty}f(x)$ is the value (if one exists) that $f(x)$ approaches when $x$ is taken to be as large as possible in the negative direction.
+\end{defn}
+
+%\begin{note}
+%All of the limit laws from the Section 2.3 handout hold for these infinite limits.
+%\end{note}
+
+\begin{ex}
+\begin{enumerate}
+\item  $\dlim_{x\to\infty}\frac{1}{x}=\dlim_{x\to-\infty}\frac{1}{x}=0, \dlim_{x\to0^+}\frac{1}{x}=\infty, \text{  and  } \dlim_{x\to0^-}\frac{1}{x}=-\infty$
+\vspace{1.5in}
+\item $\dlim_{x\to-\infty}e^x=0 \text{  and  } \dlim_{x\to\infty}e^x=\infty$
+\vspace{1.5in}
+\item $\dlim_{x\to0^+}\ln(x)=-\infty \text{  and  } \dlim_{x\to\infty}\ln(x)=\infty$
+\end{enumerate}
+\vspace{1.5in}
+\end{ex}
+
+\begin{note}
+If $n$ is a positive integer and $k$ is a constant then $\lim\limits_{x \to \infty} \dfrac{k}{x^n} = 0$ and $\lim\limits_{x \to -\infty} \dfrac{k}{x^n} = 0$
+\end{note}
+
+
+\begin{ex}
+Compute $\dlim_{x\to\infty}f(x)$ for $f(x)=x^{10}-2x^3+5x-1$.
+\end{ex}
+
+\vspace{2in}
+
+\begin{note} If $f(x)$ is a polynomial, $\lim\limits_{x \to \infty} f(x)$ and $\lim\limits_{x \to -\infty} f(x)$ are uniquely determined by the leading term of $f(x)$. (Recall that the leading term of a polynomial is the term containing the highest power on $x$). In other words, if $f(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0$, then
+\begin{center}
+$\lim\limits_{x \to \infty} f(x) = \lim\limits_{x \to \infty} a_n x^n$ \hspace{.5cm} and \hspace{.5cm}  $\lim\limits_{x \to -\infty} f(x) = \lim\limits_{x \to -\infty} a_n x^n$
+\end{center}
+%There are four cases:
+%\begin{center}
+%\begin{tabular}{|c|c|c| c | c|}\hline
+%Parity of degree & Sign of leading coefficient & $\lim\limits_{x \to \infty} f(x)$ & $\lim\limits_{x \to -\infty} f(x)$  \\ \hline
+%Even & Positive  &$ \infty$ & $\infty$ \\\hline
+%Even & Negative  & $-\infty$ & $-\infty$ \\\hline
+%Odd & Positive  & $\infty$ & $-\infty$ \\\hline
+%Odd & Negative & $-\infty$ & $\infty$ \\\hline
+%\end{tabular}
+%\end{center}
+\end{note}
+
+%% remind vertical asymptotes
+\begin{ex}
+Compute $\dlim_{x\to\infty}\dfrac{x^2+3}{2x^2+2x+4}$
+\end{ex}
+%% Note: It does not make sense to ``set x=\infty''
+\vspace{2in}
+
+\begin{defn}
+A function $f(x)$ has a \u{horizontal asymptote} at $y=c$ if at least one of the following is true: $\dlim_{x\to\infty}f(x)=c$ or $\dlim_{x\to-\infty} f(x)=c$
+\end{defn}
+
+\begin{ex}
+Let $f(x)=\dfrac{x-1}{x-x^2}$. 
+\begin{enumerate}
+\item Find the domain of $f(x)$. Write your answer in interval notation.
+\item Is $f(x)$ continuous at $x=1$? Explain.
+\item Find a function $g(x)$ such that $f(x)=g(x)$ for all $x\neq1$, and $g$ is continuous at $x=1$.
+\item Sketch a graph of $f(x)$. (Hint: First sketch a graph of $g(x)$, and then think about how the graph of $f$ should differ from the graph of $g$).
+\item Find all vertical and horizontal asymptotes of $f(x)$. Use limits to justify your answers.
+\end{enumerate}
+\end{ex}
+\vfill
+
+\newpage
+\text{ }
+\vfill
+\begin{ex}
+Find all horizontal and vertical asymptotes of $f(t)=\dfrac{3}{e^t-2}$.
+\end{ex}
+\vfill
+
+%\begin{ex}
+%A spring with a mass attached to its end oscillates above and below equilibrium over time. The distance from equilibrium for a particular spring is modelled by $f(t)=\dfrac{\sin(t)}{t}$, where $t$ is measured in seconds. What happens to the spring in the long run?
+%Compute $\dlim_{x\to\infty}\dfrac{\sin(x)}{x}$. (Hint: Use the Squeeze Theorem!)
+%\end{ex}
+
+
+
+
+\end{document}

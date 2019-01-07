@@ -1,0 +1,238 @@
+\documentclass[11pt]{article}
+%\usepackage[top=1in, bottom=1in, left=.75in, right=.75in]{geometry}
+
+%\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{ifthen}
+\usepackage{amscd}
+\usepackage{cancel}
+\usepackage{amssymb}
+%\usepackage{polynom}
+\usepackage{wasysym}
+\usepackage{bbm}
+\usepackage{rotating}
+\usepackage{hyperref}
+\parindent 0 in
+
+\newcommand{\forceindent}{\leavevmode{\parindent=1em\indent}}
+
+\usepackage[top=.75in, bottom=.75in, left=.75in, right=.75in]{geometry}
+\topmargin-0.25in \textheight9.8in \oddsidemargin-0.3in \evensidemargin0.25in
+\textwidth7.3in
+\headsep0.1in
+
+%\topmargin-0.25in \textheight9.8in \oddsidemargin-0.5in \evensidemargin-0.5in
+%\textwidth7.3in
+%\headsep0.1in
+
+\pagestyle{fancyplain} \lhead{Math \coursenum: \coursetitle}
+\chead{}
+\rhead{Winter 2019, CRN \crn}
+
+
+\begin{document}
+
+\renewcommand{\u}[1]{{\underline{#1}}}
+
+%%%%%%%%%%%%%%%%
+%
+% Change for each syllabus
+%
+%%%%%%%%%%%%%%%%
+
+\newcommand{\coursenum}{251 }
+\newcommand{\coursetitle}{Calculus I}
+\newcommand{\term}{Winter\%2019}
+
+\newcommand{\crn}{24321}
+
+\newcommand{\finalday}{Mon}
+
+%%%%%%%%%%%%%%%%
+
+\begin{tabular}{p{4.5in} l}
+{\bf{Instructor}}: Helen Jenne								&	{\bf{Office Hours}}: \\
+{\bf{Office}}:  Fenton 209		& 	TBA\\
+{\bf{Email}}:  hjenne@uoregon.edu 				& 	 \\	
+& \\							
+
+											
+\end{tabular}	
+								
+{\bf{Class Meetings}}:  1 - 1:50pm, MTWF, Deady 307\\
+
+{\bf{Text}}:  \emph{Calculus, Concepts, and Contexts, 4th edition} by Stewart. We will cover roughly Chapters 2, 3, and 4. Students should read Chapter 1 on their own and it should be review.  \\
+
+\noindent\textbf{Prerequisites:} A grade of C- or better in Math 112, or satisfactory placement exam score, is a prerequisite for this course. \\
+
+\noindent \textbf{Learning Objectives}: A successful student in this course should be able to model and solve a wide class of optimization problems that are accessible to differential calculus. Much of the other material covered in this course is necessary for that objective. Students will learn
+\begin{itemize}
+\item basic facts about limits. 
+\item the geometric interpretation of the derivative as the slope of the tangent line of a graph. 
+\item to differentiate functions built up from polynomial, exponential, logarithmic, and trigonometric functions.
+\item to sketch graphs of functions.
+\item to solve related rates problems.
+\item to find the linear approximation to a function at a specific value of the variable, graph the linear approximation and the function on the same pair of axes, and use the linear approximation to find approximations to values of the function near the point at which the approximation is taken.
+\end{itemize}
+
+\textbf{Grading}:  The following grading scheme will be adopted for the course:  
+
+\begin{center}
+\begin{tabular}{p{2.5 in} l}
+	WeBWorK		&	$12\%$ \\
+	Hand-In Homework & $8\%$ \\
+	5 min quizzes				&	$3\%$ \\
+	Midterm Exams	 (2)		&	$20\%$ each\\
+	Week 10 Mini Exam				& $10\%$ \\
+	Final Exam				&	$27\%$ \\
+\end{tabular}
+
+\end{center}
+
+Grades will be kept updated on Canvas throughout the term. 
+Standard grade assignments will be made (e.g. grades in the 80\% to 90\% range will be B's, those in the 70\% to 80\% range are C's, etc.). I reserve the right to apply a course adjustment to grades at the end of the term. A student who achieves adjusted grades of D or worse on all of the exams may be eligible for a maximum grade of D. \\
+
+
+
+\noindent\textbf{Homework:} There will be two different types of homework for this course: WeBWorK and hand-in homework. \\
+
+
+\noindent\textbf{WeBWorK:} WeBWorK assignments will typically be due Tuesdays and Fridays at 11:59 p.m. No work for these assignments needs to be turned in on paper, however I recommend that you keep your work organized for easy reference when studying for exams. Almost all problems have unlimited attempts, and solutions to select problems will be available on Webwork after the due date.
+
+\newpage
+
+\u{WeBWorK Login} \\
+Log in through the button on the main menu of Canvas labeled ``€œWeBWorK."
+You can also log in directly through \url{https://webwork.uoregon.edu/webwork2/Math251-24321/}.
+Sign in the same way you sign into your uoregon email account.
+Please make sure, as soon as possible, that you are able to login and that you can see the first few Webwork assignments. 
+
+\u{First assignment} \\
+The assignment ``WebWorkPractice" is optional, but highly recommended if you are unfamiliar with WebWorK. The first assignment will cover Sections 2.2, 2.3, and 2.4 and is due \textbf{Friday January 11th}.   \\
+
+\noindent \textbf{Hand-In Homework:} Hand-in homework will consist of problems from the textbook. Your homework must be presented well, which means that you will not receive full credit if your assignment fails to meet any of the following criteria:
+\begin{itemize}
+\item Your name is at the top of the front page.
+\item Multiple pages are stapled together.
+\item You have neat and complete solutions to all problems (including all work), with final answers clearly marked.
+\item Problems are organized in an easy-to-understand fashion. It must be clear, for each problem, what number it is, and what section it is from.
+\end{itemize}
+Hand-in homework will typically be due Monday. Problems and due dates will be announced in class and also posted on Canvas. \\
+\u{First assignment} \\
+The first hand-in homework assignment reviews some (but not all) prerequisite material from Chapter 1. Please complete the following problems:\\
+1.1 \#2, 25, 29, 59, 68; 1.2 \#12; 1.3 \#51, 54; 1.5 \#2(b), 4(a); 1.6 \#49\\
+and turn them in \textbf{Wednesday January 9th at the beginning of class}. \\
+
+
+
+{\bf Policy on late homework:}  You have three 24-hour extensions on WeBWorK assignments. We have quite a few WeBWorK assignments, so use these extensions sparingly. If you would like to use one of your extensions, you must email me asking for an extension prior to the deadline. Hand-in homework is due at the beginning of class on the announced due date and no extensions will be given unless there are documented, extreme circumstances.\\
+
+
+
+{\bf{Quizzes}}:  There will be short quizzes approximately twice a week during the last five minutes of class over the material from the day's lecture. Each quiz will be worth 10 points and you will receive 7 of those points for being present during class and attempting the quiz problems. You will be allowed to use your notes, but not the textbook. No make up quizzes will be given, but at the end of the quarter I will drop your two lowest quiz scores.   \\
+
+\noindent{\bf{Exams}}: Two midterm exams, one mini exam, and one cumulative final exam will be given this quarter. The midterm exams and mini exam will be held during our class period on the dates listed below. I reserve the right to change the dates of the exams if necessary, and will give advanced notice if this is the case. 
+\begin{center}
+\begin{tabular}{ll}
+Exam 1: 		&	Tuesday, January 29th (Week 4) \\
+Exam 2:		&	Tuesday, February 19th  (Week 7) \\
+Mini Exam:  		&	Wednesday,  March 13th (Week 10) \\
+\hypertarget{final} Cumulative Final Exam:	&	Wednesday, March 20th at 2:45 (Week 11)  \\
+\end{tabular}
+\end{center}
+Specific information regarding each exam will be given as the exams get closer.\\
+
+\newpage
+
+{\bf{Make-Up Policy:}} Unless there are documented, extreme circumstances, no make-up exams will be given. If such circumstances arise, you must contact me as soon as possible to make arrangements. \\
+
+
+\noindent\textbf{Calculator Policy:} You are welcome to use calculators on homework, but \textit{no} calculators will be allowed on any of the quizzes or exams in this course. Students are expected to be able to perform basic arithmetic operations with fractions and decimals by hand. \\
+
+
+
+
+
+
+
+
+\noindent \textbf{Getting Help:} If you are having trouble with homework (or any material related to the class), I expect that you ask for help. There are several resources available to you. One excellent resource is the ``Email Instructor" button at the bottom of the WebWork screen. Clicking on that and typing a short message about what you've tried on the problem will help me diagnose the issue you're having. I frequently check my email and make every effort to respond to students' emails in a timely manner. More likely than not, I will respond to your email within 24 hours. 
+
+\forceindent I strongly encourage you to come to my office hours with questions. If you are unable to come to my office during the allotted times, please email me to set up an appointment (which I am happy to do if I have time available).
+
+\forceindent Your classmates are also a great resource; I encourage you to work together on homework, as long as you submit your own work. 
+
+\forceindent
+Free, drop-in tutoring is available throughout the week on the fourth floor of Knight Library in the TLC Sky Studio. Free homework help is available in the Math Library Reading Room (across the hall from the math office in Fenton Hall) on weekdays and Sundays. 
+Small group tutoring and one-on-one tutoring is also available. For more information, see 
+\href{https://tlc.uoregon.edu/tutoring/}{tlc.uoregon.edu/tutoring/} or just stop by the Teaching and Learning Center on the fourth floor of the Knight Library. \\
+
+
+
+
+
+
+
+
+
+\noindent\textbf{Approximate Schedule:} The following schedule of sections to be covered is approximate, and subject to change. 
+
+\begin{center}
+\begin{tabular}{llcll}
+Week 1: & 2.2-2.5 & \hspace{1cm} & Week 6: & 3.7-3.9 \\
+Week 2: & 2.5-2.8 & \hspace{1cm} & Week 7: & 4.2, Exam 2 \\
+Week 3: & 2.8-3.2 & \hspace{1cm} & Week 8: & 4.2, 4.3, 4.6 \\
+Week 4: & 3.3-3.5, Exam 1 & \hspace{1cm} & Week 9: & 4.6, 4.5\\
+Week 5: & 3.5, 4.1 & \hspace{1cm} & Week 10: &Review, Mini Exam\\
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Important Dates}: 
+\begin{center} \begin{minipage}{5in}
+\begin{flushleft}
+Last day to drop without a ``W"  \dotfill January 12th \\
+Last day to add a class \dotfill January 13th \\
+Martin Luther King Jr. Day (No classes) \dotfill January 21st \\
+Last day to withdraw or change to P/NP \dotfill February 24th \\
+
+
+\end{flushleft}
+\end{minipage}
+\end{center}	
+
+
+
+\vskip.25in
+
+
+\textbf{Accessibility}:  For those of you who are currently registered with Accessible Education Center for a documented disability, please present your paperwork to me during the first week of the term (or earlier) so that we can design a plan for you.
+Those of you with a disability but are not registered with AEC should contact them as soon as possible. It is much more likely that measures can be taken to provide adequate special accommodation if the organization is done through AEC. Please let me know if you need additional accommodations. \\
+
+
+
+
+\noindent\textbf{Student Conduct}: I plan to treat every student with respect and, as such, expect my students to show 
+respect for me and for the class as a whole.
+Violations of the student conduct code results in the incident being included on your student conduct 
+record as well as academic sanctions such as a failing grade on any coursework related to the violation 
+or simply a failing grade in the course.  The University of Oregon requires all instances of academic dishonesty be 
+reported, no matter how small.  For a list of descriptions of academic dishonesty, see the \href{https://studentlife.uoregon.edu/conduct}{Student Conduct Code}.\\
+
+
+
+\textbf{Title IX and Sexual Violence}:
+I am a student-directed employee. For information about my reporting obligations as an employee, please see Employee Reporting Obligations\footnote{\url{http://titleix.uoregon.edu/employee-reporting-obligations}}. Students experiencing any form of prohibited discrimination or harassment, including sex or gender based
+violence, may seek information on safe.uoregon.edu, respect.uoregon.edu, titleix.uoregon.edu, or aaeo.uoregon.edu or contact the non-confidential Title IX office (541-346-8136), AAEO office (541-346-3123), or Dean of Students offices (541-346-3216), or call the 24-7 hotline 541-346-SAFE for help. I am also a mandatory reporter of child abuse. Please find more information at \footnote{\url{http://hr.uoregon.edu/policies-leaves/general-information/mandatory-reporting-child-abuse-and-neglect}}. 
+
+
+
+
+\end{document}
+

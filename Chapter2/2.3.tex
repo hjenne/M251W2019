@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,fancyhdr,enumerate,graphicx,array}
+\usepackage[usenames,dvipsnames]{color}
+
+\headheight=23pt
+\textwidth=6.5in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textheight=8in
+ \topmargin = -0.4 in
+
+\theoremstyle{definition}
+\newtheorem{ex}{Example}[subsection]
+\newtheorem*{defn}{Definition}
+\newtheorem*{note}{Note}
+\newtheorem{exer}[ex]{Exercise}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{props}{Properties}
+
+\newcommand*{\dlim}{\displaystyle\lim}
+\renewcommand{\u}[1]{\underline{#1}}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+
+\newcommand{\lectureheader}{
+\thispagestyle{fancy}
+\lhead{Math 251: Calculus I\\ CRN 33502}
+\rhead{University of Oregon\\ Spring 2017}
+\chead{\textbf{Section \arabic{section}.\arabic{subsection}} \\ 
+\textbf{\sectiontitle}}
+\lfoot{} \cfoot{} \rfoot{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{section}{2}			%%%%%%%%%%%%%
+\setcounter{subsection}{3}		%%%%%%%%%%%%%
+\def\sectiontitle{The Limit Laws}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\lectureheader
+
+\begin{props}
+Assume that for the functions $f(x)$ and $g(x)$, $\dlim_{x\to a}f(x)=L$ and $\dlim_{x\to a}g(x)=K$. Also assume that $c$ and $p>0$ are constant.
+\begin{center}
+\begin{tabular}{ll}
+$\dlim_{x\to a}x=a$ 
+& $\dlim_{x\to a}c=c$\\ \\
+$\dlim_{x\to a}\left[f(x)+ g(x)\right]=L+ K$
+& $\dlim_{x\to a}\left[f(x) - g(x)\right]=L - K$ \\ \\
+$\dlim_{x\to a}\left[f(x)\cdot g(x)\right]=L\cdot K$
+& $\dlim_{x\to a} \dfrac{f(x)}{g(x)}=\dfrac{L}{K}$ as long as $K\neq0$\\ \\
+ $\dlim_{x\to a}\left[c\cdot f(x)\right]=c\cdot L$ \\ \\
+$\dlim_{x\to a}\left[f(x)\right]^p=L^p$ as long as $L^p$ exists \\
+\end{tabular}
+\end{center}
+Note: Here we allow for the expression $a$ to represent $\pm\infty$ (see Section 2.5).
+\end{props}
+
+\begin{ex}
+Assume that we know $\dlim_{t\to2}f(t)=-3$, $\dlim_{t\to-1}f(t)=1$, $\dlim_{t\to2}g(t)=-2$, and $\dlim_{t\to-1}g(t)=0$. Find each of the folllowing limits, if possible.
+\begin{enumerate}[(a)]
+\item $\dlim_{t\to2}\left[f(t)-3g(t)\right]$
+\item $\dlim_{t\to2}\left[g(t)\right]^3$
+\item $\dlim_{t\to-1}\dfrac{f(t)}{g(t)}$
+\end{enumerate}
+\end{ex}
+
+\begin{note}
+Given any rational (or polynomial) function $f$ for which $f(a)$ is defined, $\dlim_{x\to a}f(x)=f(a)$.
+\end{note}
+
+\begin{note}
+If $f(x)=g(x)$, except possibly at $x=a$, then $\dlim_{x\to a}f(x)=\dlim_{x\to a}g(x)$ (assuming the limits exist). 
+\end{note}
+
+\begin{ex}
+Find the indicated limit using limit laws and/or algebra.
+\begin{enumerate}
+\item $\dlim_{x\to 2}\sqrt{ \dfrac{ 2x^2 +1}{3x-2} }$
+\vspace{1cm}
+\item $\dlim_{x\to 1}(x^2+x-3)^4$
+\vspace{1cm}
+\item $\dlim_{x\to 3}\dfrac{x^3-9x}{3-x}$
+\vspace{2cm}
+\item $\dlim_{x\to 0}\dfrac{\sqrt{x^2+1}-1}{x}$
+\vspace{2cm}
+\item $\dlim_{t\to 4}\dfrac{t - \sqrt{3t+4}}{4-t}$
+\vspace{2cm}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Let $f(x) = \dfrac{ x^2 - 1}{| x - 1|}$. Does $\dlim_{x\to 1} f(x)$ exist?
+\vspace{1.5in}
+\end{ex}
+
+\begin{props}
+If $f(x)\leq g(x)$ when $x$ is near $a$ (except possibly at $a$) and the limits of $f$ and $g$ both exists as $x$ approaches $a$, then $\dlim_{x\to a}f(x)\leq \dlim_{x\to a}g(x)$.
+\end{props}
+
+\begin{thm}[The Squeeze Theorem]
+If $f(x)\leq g(x)\leq h(x)$ when $x$ is near $a$ (except possibly at $a$), and $\dlim_{x\to a}f(x)=\dlim_{x\to a}h(x)=L$, then $\dlim_{x\to a}g(x)=L$.
+\end{thm}
+
+\begin{ex}
+If $2x\leq g(x)\leq x^4-x^2+2$ for all $x$, evaluate $\dlim_{x\to 1}g(x)$.
+\end{ex}
+
+\end{document}
